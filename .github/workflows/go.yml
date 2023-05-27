@@ -37,6 +37,9 @@ jobs:
   build:
     needs: test
     runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ['ubuntu-latest', 'ubuntu-18.04', 'windows-latest']
     steps:
     - uses: actions/checkout@v3
     
