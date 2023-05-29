@@ -2,10 +2,10 @@ version: '3'
 services:
   postgres:
     image: "postgres"
-    # environment:
-    #   - POSTGRES_USER=root
-    #   - POSTGRES_PASSWORD=root
-    #   - POSTGRES_DB=root
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=root
     ports:
       - "5432:5432"
     volumes:
@@ -13,9 +13,9 @@ services:
 
   pgadmin-compose:
     image: dpage/pgadmin4
-    # environment:
-    #   PGADMIN_DEFAULT_EMAIL: "gui@alura.com"
-    #   PGADMIN_DEFAULT_PASSWORD: "123456"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "gui@alura.com"
+      PGADMIN_DEFAULT_PASSWORD: "123456"
     ports:
       - "54321:80"
     depends_on:
